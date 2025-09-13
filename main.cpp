@@ -33,7 +33,7 @@ void insert(int val_indx, int indx)
 void sort()
 {
     for(int i=1;i<size;i++)
-        for(int j=0;j<size;j++)
+        for(int j=0;j<i;j++)
             if(a[i]<a[j]) 
             {
                 insert(i, j);
