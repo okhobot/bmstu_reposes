@@ -23,7 +23,7 @@ int min()
         min=(min>a[i])?a[i]:min;
     return min;
 }
-void insert(int val_indx, int indx)
+void insert_from_forward(int val_indx, int indx)
 {
     int val=a[val_indx];
     for(int i=val_indx;i>indx;i--)
@@ -36,7 +36,7 @@ void sort()
         for(int j=0;j<i;j++)
             if(a[i]<a[j]) 
             {
-                insert(i, j);
+                insert_from_forward(i, j);
             }
 }
 
