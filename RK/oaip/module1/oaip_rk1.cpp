@@ -116,7 +116,7 @@ std::string extract_time(std::string line)
 
 int main()
 {
-    bool system_stable=true;
+    bool system_stable = true;
     const double nominal_freq = 50, normal_delta = 0.2;
     double mean_power = 0, mean_voltage = 0, max_voltage_delta = 0, freq_delta = 0;
     std::string line;
@@ -145,7 +145,7 @@ int main()
         current[i] = extract_value(logs[i], "I:");
         freq[i] = extract_value(logs[i], "F:");
 
-        time_stamps[i]=extract_time(logs[i]);
+        time_stamps[i] = extract_time(logs[i]);
 
         // Анализ данных
         power[i] = voltage[i] * current[i];
@@ -158,19 +158,20 @@ int main()
     // Вторичный анализ данных
     for (int i = 0; i < logs.size(); i++)
     {
-        double vd=abs(voltage[i] - mean_voltage), fd=abs(freq[i] - nominal_freq);
+        double vd = abs(voltage[i] - mean_voltage), fd = abs(freq[i] - nominal_freq);
         max_voltage_delta = std::max(max_voltage_delta, vd);
-        if(fd>normal_delta)
+        if (fd > normal_delta)
         {
-            std::cout<<"Frequency deviation at T="<<time_stamps[i]<<": "<<fd<<"Hz"<<std::endl;
-            if(vd>normal_delta)system_stable=false;
+            std::cout << "Frequency deviation at T=" << time_stamps[i] << ": " << fd << "Hz" << std::endl;
+            if (vd > normal_delta)
+                system_stable = false;
         }
     }
 
-    //Вывод результатов
-    std::cout<<"Average Power: "<<mean_power<<" W"<<std::endl;
-    std::cout<<"Voltage deviation max: "<<max_voltage_delta<<" V"<<std::endl;
-    std::cout<<"System stable: "<<(system_stable?"true":"false")<<std::endl;
+    // Вывод результатов
+    std::cout << "Average Power: " << mean_power << " W" << std::endl;
+    std::cout << "Voltage deviation max: " << max_voltage_delta << " V" << std::endl;
+    std::cout << "System stable: " << (system_stable ? "true" : "false") << std::endl;
 
     return 0;
 }
