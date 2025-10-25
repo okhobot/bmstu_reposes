@@ -87,7 +87,7 @@ int main()
     split_str();
     for (int i = 0; i < 10; i++)
     {
-        std::cout << words[i] << std::endl;
+        //std::cout << words[i] << std::endl;
         if (words[i][0] == 'b')
             b_count++;
         max_len = std::max(max_len, (int)strlen(words[i]));
