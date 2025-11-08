@@ -50,7 +50,7 @@ public:
     }
 };
 
-const std::string fname = "C:\\USER\\git\\bmstu_reposes\\labs\\oaip\\3\\books.txt";
+const std::string fname = "books.txt";
 std::vector<Book> books;
 
 std::stringstream add_books()
@@ -121,7 +121,7 @@ int main()
     while (com != "exit")
     {
         std::getline(std::cin, com);
-        std::ofstream outp("C:\\USER\\git\\bmstu_reposes\\labs\\oaip\\3\\logs.txt", std::ios::app);
+        std::ofstream outp("logs.txt", std::ios::app);
 
         if (com == "add")
         {
