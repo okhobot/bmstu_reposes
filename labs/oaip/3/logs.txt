@@ -1,0 +1,7 @@
+find book: b3:
+Name: b3; Author: a3; Year of release: 3;
+get_by_max_year = 3
+Name: bb1; Author: a1; Year of release: 1;
+Name: ba2; Author: a2; Year of release: 2;
+Name: b3; Author: a3; Year of release: 3;
+
