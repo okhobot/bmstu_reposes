@@ -134,8 +134,13 @@ int main()
             std::getline(std::cin, com);
 
             outp << "find book: " << com << ":\n";
-            find_book(com).print_f(outp);
-            find_book(com).print_f(std::cout);
+            Book book=find_book(com);
+            std::stringstream ss;
+            
+            if(book.get_name()=="")ss.str("No found\n");
+            else book.print_f(ss);
+            outp<<ss.str();
+            std::cout<<ss.str();
         }
         else if (com == "sort")
         {
