@@ -160,9 +160,10 @@ int main()
                       << "command add - add books; to end edding, send empty line" << '\n'
                       << "command get_by_max_year \\n max_year - books published no later than the year of publication" << std::endl;
         }
-
+        else if(com!="exit")std::cout<<"unknown command"<<std::endl;
         outp.close();
     }
+    
 
     return 0;
 }
